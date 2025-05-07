@@ -1,0 +1,309 @@
+Microsoft Windows [Version 10.0.26100.3775]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Zinkal Patel>mongosh
+Current Mongosh Log ID: 68170210477bfe55f9b5f898
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.5.0
+Using MongoDB:          8.0.8
+Using Mongosh:          2.5.0
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2025-04-28T17:50:57.068+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+test> show dbs
+admin    40.00 KiB
+config  108.00 KiB
+local    40.00 KiB
+test> use mydata
+switched to db mydata
+mydata> db.collection.insertOne({name:"john",age:30,city:"new york"});
+{
+  acknowledged: true,
+  insertedId: ObjectId('6817026c477bfe55f9b5f899')
+}
+mydata> db.collection.insertManydb.employees.insertMany([
+...     { "name": "Alice Johnson", "age": 30, "department": "HR", "salary": 60000, "joining_date": "2019-05-15" },
+...     { "name": "Bob Smith", "age": 40, "department": "IT", "salary": 80000, "joining_date": "2015-08-20" },
+...     { "name": "Charlie Brown", "age": 35, "department": "Finance", "salary": 75000, "joining_date": "2018-11-30" },
+...     { "name": "David White", "age": 28, "department": "IT", "salary": 72000, "joining_date": "2021-01-10" },
+...     { "name": "Emma Wilson", "age": 32, "department": "Marketing", "salary": 65000, "joining_date": "2017-03-25" },
+...     { "name": "Franklin Adams", "age": 45, "department": "Finance", "salary": 90000, "joining_date": "2010-07-12" },
+...     { "name": "Grace Lee", "age": 29, "department": "HR", "salary": 58000, "joining_date": "2020-06-05" },
+...     { "name": "Henry Ford", "age": 50, "department": "IT", "salary": 95000, "joining_date": "2008-12-15" },
+...     { "name": "Isabella Martinez", "age": 38, "department": "Marketing", "salary": 70000, "joining_date": "2016-09-18" },
+...     { "name": "Jack Carter", "age": 27, "department": "Finance", "salary": 68000, "joining_date": "2022-04-10" }
+... ]);
+...
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('68170332477bfe55f9b5f89a'),
+    '1': ObjectId('68170332477bfe55f9b5f89b'),
+    '2': ObjectId('68170332477bfe55f9b5f89c'),
+    '3': ObjectId('68170332477bfe55f9b5f89d'),
+    '4': ObjectId('68170332477bfe55f9b5f89e'),
+    '5': ObjectId('68170332477bfe55f9b5f89f'),
+    '6': ObjectId('68170332477bfe55f9b5f8a0'),
+    '7': ObjectId('68170332477bfe55f9b5f8a1'),
+    '8': ObjectId('68170332477bfe55f9b5f8a2'),
+    '9': ObjectId('68170332477bfe55f9b5f8a3')
+  }
+}
+mydata> db.collection.find();
+[
+  {
+    _id: ObjectId('6817026c477bfe55f9b5f899'),
+    name: 'john',
+    age: 30,
+    city: 'new york'
+  }
+]
+mydata> db.collection2.find();
+[
+  {
+    _id: ObjectId('68170332477bfe55f9b5f89a'),
+    name: 'Alice Johnson',
+    age: 30,
+    department: 'HR',
+    salary: 60000,
+    joining_date: '2019-05-15'
+  },
+  {
+    _id: ObjectId('68170332477bfe55f9b5f89b'),
+    name: 'Bob Smith',
+    age: 40,
+    department: 'IT',
+    salary: 80000,
+    joining_date: '2015-08-20'
+  },
+  {
+    _id: ObjectId('68170332477bfe55f9b5f89c'),
+    name: 'Charlie Brown',
+    age: 35,
+    department: 'Finance',
+    salary: 75000,
+    joining_date: '2018-11-30'
+  },
+  {
+    _id: ObjectId('68170332477bfe55f9b5f89d'),
+    name: 'David White',
+    age: 28,
+    department: 'IT',
+    salary: 72000,
+    joining_date: '2021-01-10'
+  },
+  {
+    _id: ObjectId('68170332477bfe55f9b5f89e'),
+    name: 'Emma Wilson',
+    age: 32,
+    department: 'Marketing',
+    salary: 65000,
+    joining_date: '2017-03-25'
+  },
+  {
+    _id: ObjectId('68170332477bfe55f9b5f89f'),
+    name: 'Franklin Adams',
+    age: 45,
+    department: 'Finance',
+    salary: 90000,
+    joining_date: '2010-07-12'
+  },
+  {
+    _id: ObjectId('68170332477bfe55f9b5f8a0'),
+    name: 'Grace Lee',
+    age: 29,
+    department: 'HR',
+    salary: 58000,
+    joining_date: '2020-06-05'
+  },
+  {
+    _id: ObjectId('68170332477bfe55f9b5f8a1'),
+    name: 'Henry Ford',
+    age: 50,
+    department: 'IT',
+    salary: 95000,
+    joining_date: '2008-12-15'
+  },
+  {
+    _id: ObjectId('68170332477bfe55f9b5f8a2'),
+    name: 'Isabella Martinez',
+    age: 38,
+    department: 'Marketing',
+    salary: 70000,
+    joining_date: '2016-09-18'
+  },
+  {
+    _id: ObjectId('68170332477bfe55f9b5f8a3'),
+    name: 'Jack Carter',
+    age: 27,
+    department: 'Finance',
+    salary: 68000,
+    joining_date: '2022-04-10'
+  }
+]
+mydata> db.collection2.find({department:"IT"})
+[
+  {
+    _id: ObjectId('68170332477bfe55f9b5f89b'),
+    name: 'Bob Smith',
+    age: 40,
+    department: 'IT',
+    salary: 80000,
+    joining_date: '2015-08-20'
+  },
+  {
+    _id: ObjectId('68170332477bfe55f9b5f89d'),
+    name: 'David White',
+    age: 28,
+    department: 'IT',
+    salary: 72000,
+    joining_date: '2021-01-10'
+  },
+  {
+    _id: ObjectId('68170332477bfe55f9b5f8a1'),
+    name: 'Henry Ford',
+    age: 50,
+    department: 'IT',
+    salary: 95000,
+    joining_date: '2008-12-15'
+  }
+]
+mydata> db.collection2.find({ salary: { $gt: 70000 } })
+[
+  {
+    _id: ObjectId('68170332477bfe55f9b5f89b'),
+    name: 'Bob Smith',
+    age: 40,
+    department: 'IT',
+    salary: 80000,
+    joining_date: '2015-08-20'
+  },
+  {
+    _id: ObjectId('68170332477bfe55f9b5f89c'),
+    name: 'Charlie Brown',
+    age: 35,
+    department: 'Finance',
+    salary: 75000,
+    joining_date: '2018-11-30'
+  },
+  {
+    _id: ObjectId('68170332477bfe55f9b5f89d'),
+    name: 'David White',
+    age: 28,
+    department: 'IT',
+    salary: 72000,
+    joining_date: '2021-01-10'
+  },
+  {
+    _id: ObjectId('68170332477bfe55f9b5f89f'),
+    name: 'Franklin Adams',
+    age: 45,
+    department: 'Finance',
+    salary: 90000,
+    joining_date: '2010-07-12'
+  },
+  {
+    _id: ObjectId('68170332477bfe55f9b5f8a1'),
+    name: 'Henry Ford',
+    age: 50,
+    department: 'IT',
+    salary: 95000,
+    joining_date: '2008-12-15'
+  }
+]
+mydata> db.collection2.find({ joining_date: { $gt: "2018-12-31" } })
+[
+  {
+    _id: ObjectId('68170332477bfe55f9b5f89a'),
+    name: 'Alice Johnson',
+    age: 30,
+    department: 'HR',
+    salary: 60000,
+    joining_date: '2019-05-15'
+  },
+  {
+    _id: ObjectId('68170332477bfe55f9b5f89d'),
+    name: 'David White',
+    age: 28,
+    department: 'IT',
+    salary: 72000,
+    joining_date: '2021-01-10'
+  },
+  {
+    _id: ObjectId('68170332477bfe55f9b5f8a0'),
+    name: 'Grace Lee',
+    age: 29,
+    department: 'HR',
+    salary: 58000,
+    joining_date: '2020-06-05'
+  },
+  {
+    _id: ObjectId('68170332477bfe55f9b5f8a3'),
+    name: 'Jack Carter',
+    age: 27,
+    department: 'Finance',
+    salary: 68000,
+    joining_date: '2022-04-10'
+  }
+]
+mydata> db.collection2.find({ age: { $gte: 30, $lte: 40 } })
+[
+  {
+    _id: ObjectId('68170332477bfe55f9b5f89a'),
+    name: 'Alice Johnson',
+    age: 30,
+    department: 'HR',
+    salary: 60000,
+    joining_date: '2019-05-15'
+  },
+  {
+    _id: ObjectId('68170332477bfe55f9b5f89b'),
+    name: 'Bob Smith',
+    age: 40,
+    department: 'IT',
+    salary: 80000,
+    joining_date: '2015-08-20'
+  },
+  {
+    _id: ObjectId('68170332477bfe55f9b5f89c'),
+    name: 'Charlie Brown',
+    age: 35,
+    department: 'Finance',
+    salary: 75000,
+    joining_date: '2018-11-30'
+  },
+  {
+    _id: ObjectId('68170332477bfe55f9b5f89e'),
+    name: 'Emma Wilson',
+    age: 32,
+    department: 'Marketing',
+    salary: 65000,
+    joining_date: '2017-03-25'
+  },
+  {
+    _id: ObjectId('68170332477bfe55f9b5f8a2'),
+    name: 'Isabella Martinez',
+    age: 38,
+    department: 'Marketing',
+    salary: 70000,
+    joining_date: '2016-09-18'
+  }
+]
+mydata> db.collection2.deleteMany({ joining_date: { $lt: "2010-01-01" } })
+{ acknowledged: true, deletedCount: 1 }
+mydata> db.collection2.find().sort({ salary: -1 }).limit(1)
+[
+  {
+    _id: ObjectId('68170332477bfe55f9b5f89f'),
+    name: 'Franklin Adams',
+    age: 45,
+    department: 'Finance',
+    salary: 90000,
+    joining_date: '2010-07-12'
+  }
+]
+mydata>
