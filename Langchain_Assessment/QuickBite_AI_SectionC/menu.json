@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Paneer Butter Masala",
+        "cuisine": "North Indian",
+        "price": 280,
+        "veg": true
+    },
+    {
+        "name": "Veg Biryani",
+        "cuisine": "North Indian",
+        "price": 220,
+        "veg": true
+    },
+    {
+        "name": "Dal Makhani",
+        "cuisine": "North Indian",
+        "price": 250,
+        "veg": true
+    },
+    {
+        "name": "Margherita Pizza",
+        "cuisine": "Italian",
+        "price": 350,
+        "veg": true
+    },
+    {
+        "name": "Chicken Pizza",
+        "cuisine": "Italian",
+        "price": 420,
+        "veg": false
+    },
+    {
+        "name": "Chicken Biryani",
+        "cuisine": "Mughlai",
+        "price": 350,
+        "veg": false
+    },
+    {
+        "name": "Grilled Chicken",
+        "cuisine": "American",
+        "price": 450,
+        "veg": false
+    },
+    {
+        "name": "Hakka Noodles",
+        "cuisine": "Chinese",
+        "price": 230,
+        "veg": true
+    },
+    {
+        "name": "Veg Fried Rice",
+        "cuisine": "Chinese",
+        "price": 210,
+        "veg": true
+    },
+    {
+        "name": "Butter Chicken",
+        "cuisine": "North Indian",
+        "price": 390,
+        "veg": false
+    }
+]
